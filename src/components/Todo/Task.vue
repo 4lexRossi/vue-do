@@ -11,21 +11,21 @@
                         {{task.title}}</v-list-item-title>
                 </v-list-item-content>
                 <v-list-item-icon>
-                    <v-btn @click.stop="$store.dispatch('deleteTask', task.id)" icon>
-                        <v-icon color="primary lighten-1">
-                            mdi-delete
-                        </v-icon>
-                    </v-btn>
+                    <task-menu :task="task" />                   
                 </v-list-item-icon>
             </template>
         </v-list-item>
         <v-divider></v-divider>
+
     </div>
 </template>
 
 <script>
 export default {
     name: 'VueTodoTask',
-    props: ['task']
+    props: ['task'],  
+    components: {  
+        'task-menu': require('@/components/Todo/TaskMenu.vue').default
+    }
 };
 </script>

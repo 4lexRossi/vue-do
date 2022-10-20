@@ -18,7 +18,7 @@
                 <v-list-item-action v-if="task.dueDate">
                     <v-list-item-action-text>
                         <v-icon small>mdi-calendar</v-icon>
-                        {{ task.dueDate | formatedDate}}
+                        {{ task.dueDate | formatedDate }}
                     </v-list-item-action-text>
                 </v-list-item-action>
 
@@ -41,6 +41,7 @@ export default {
     
     filters: {
         formatedDate(value) {
+            value = value.replaceAll('-', '/')
             return format(new Date(value), 'd MMM')
         }
     },

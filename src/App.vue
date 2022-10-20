@@ -46,23 +46,20 @@
         ></v-img>
       </template>
 
-      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-container class="pr-0 pl-0 pb-0">
+        <v-row>
+          <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+          <v-spacer></v-spacer>
+          <search />
+        </v-row>
+        <v-row>
+          <v-tollbar-title class="ml-4">VueDo</v-tollbar-title>
+        </v-row>
+      </v-container>
 
-      <v-app-bar-title class="app-title">VueDo</v-app-bar-title>
 
-      <v-spacer></v-spacer>
 
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-heart</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-dots-vertical</v-icon>
-      </v-btn>
+    
     </v-app-bar>
 
     <v-main>
@@ -83,13 +80,8 @@ export default {
     right: null,
   }),
   components: {
+    'search': require('@/components/Tools/Search.vue').default,
     'snackbar': require('@/components/Shared/Snackbar.vue').default
   }
 }
 </script>
-
-<style>
-.app-title div {
-  width: 100%;
-}
-</style>

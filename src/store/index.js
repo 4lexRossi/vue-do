@@ -5,6 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    search: null,
     tasks: [
       {
         id: 1,
@@ -31,8 +32,18 @@ export default new Vuex.Store({
     }
   },
   getters: {
+    tasksFiltered(state) {
+      if (!state.search) {
+        return state.tasks
+      }
+      return state.tasks.filter(task => 
+        task.title.toLowerCase().includes(state.search.toLowerCase()))
+    }
   },
   mutations: {
+    setSearch(state, value) {
+      state.search = value;
+    },
     addTask(state, newTaskTitle) {
       let newTask = {
         id: Date.now(),
@@ -56,7 +67,7 @@ export default new Vuex.Store({
     updateTaskDueDate(state, payload) {
       let task = state.tasks.filter(task => task.id === payload.id)[0];
       task.dueDate = payload.dueDate
-    },    
+    },
     showSnackbar(state, text) {
       let timeout = 0
       if (state.snackbar.show) {
@@ -88,7 +99,7 @@ export default new Vuex.Store({
     updateTaskDueDate({ commit }, payload) {
       commit('updateTaskDueDate', payload)
       commit('showSnackbar', 'Task date updated')
-    },    
+    },
   },
   modules: {
   }

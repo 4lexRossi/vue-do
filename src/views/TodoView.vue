@@ -5,6 +5,10 @@
       v-if="$store.state.tasks.length" 
     />
    <no-tasks v-else />
+
+   <done-soting-button 
+    v-if="$store.state.sorting"
+   />
   </div>
 </template>
 
@@ -14,7 +18,8 @@ export default {
   components: {
     'field-add-task': require('@/components/Todo/FieldAddTask.vue').default,
     'list-tasks': require('@/components/Todo/ListTasks.vue').default,
-    'no-tasks': require('@/components/Todo/NoTasks.vue').default
+    'no-tasks': require('@/components/Todo/NoTasks.vue').default,
+    'done-soting-button': require('@/components/Todo/DoneSortingButton.vue').default
   }
 }
 </script>

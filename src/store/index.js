@@ -30,7 +30,8 @@ export default new Vuex.Store({
     snackbar: {
       show: false,
       text: 'asd'
-    }
+    },
+    sorting : false
   },
   getters: {
     tasksFiltered(state) {
@@ -82,6 +83,9 @@ export default new Vuex.Store({
     },
     hideSnackbar(state) {
       state.snackbar.show = false
+    },
+    toggleSorting(state) {
+      state.sorting = !state.sorting
     }
   },
   actions: {

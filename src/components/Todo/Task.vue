@@ -25,6 +25,17 @@
                 <v-list-item-icon>
                     <task-menu :task="task" />                   
                 </v-list-item-icon>
+                <v-list-item-action
+                    v-if="$store.state.sorting"
+                >
+                    <v-btn
+                        color="primary"
+                        icon
+                    >
+                        <v-icon>mdi-drag-vertical</v-icon>
+                    </v-btn>
+                </v-list-item-action>
+
             </template>
         </v-list-item>
         <v-divider></v-divider>

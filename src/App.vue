@@ -61,7 +61,9 @@
           <search />
         </v-row>
         <v-row>
-          <v-tollbar-title class="text-h4 ml-4">VueDo</v-tollbar-title>
+          <v-toolbar-title class="text-h4 ml-4">
+            {{ $store.state.appTitle }}
+          </v-toolbar-title>
         </v-row>
         <v-row>
           <live-date-time />

@@ -10,42 +10,34 @@ export default new Vuex.Store({
     tasks: [
       {
         id: 1,
-        title: 'Wake Up',
+        title: 'Wake up',
         done: false,
         dueDate: '2020-10-16'
       },
       {
         id: 2,
-        title: 'Wake down',
+        title: 'Get bananas',
         done: false,
-        dueDate: '2020-10-18'
+        dueDate: '2020-10-17'
       },
       {
         id: 3,
-        title: 'Wake forward',
+        title: 'Eat bananas',
         done: false,
         dueDate: null
       }
     ],
     snackbar: {
       show: false,
-      text: 'asd'
+      text: ''
     },
-    sorting : false
-  },
-  getters: {
-    tasksFiltered(state) {
-      if (!state.search) {
-        return state.tasks
-      }
-      return state.tasks.filter(task => 
-        task.title.toLowerCase().includes(state.search.toLowerCase()))
-    }
+    sorting: false
   },
   mutations: {
     setSearch(state, value) {
-      state.search = value;
+      state.search = value
     },
+
     addTask(state, newTaskTitle) {
       let newTask = {
         id: Date.now(),
@@ -53,28 +45,32 @@ export default new Vuex.Store({
         done: false,
         dueDate: null
       }
-      state.tasks.push(newTask);
-    },
-    deleteTask(state, id) {
-      state.tasks = state.tasks.filter(task => task.id !== id);
+      state.tasks.push(newTask)
     },
     doneTask(state, id) {
-      let task = state.tasks.filter(task => task.id === id)[0];
+      let task = state.tasks.filter(task => task.id === id)[0]
       task.done = !task.done
     },
+    deleteTask(state, id) {
+      state.tasks = state.tasks.filter(task => task.id !== id)
+    },
     updateTaskTitle(state, payload) {
-      let task = state.tasks.filter(task => task.id === payload.id)[0];
+      let task = state.tasks.filter(task => task.id === payload.id)[0]
       task.title = payload.title
     },
     updateTaskDueDate(state, payload) {
-      let task = state.tasks.filter(task => task.id === payload.id)[0];
+      let task = state.tasks.filter(task => task.id === payload.id)[0]
       task.dueDate = payload.dueDate
     },
+    setTasks(state, tasks) {
+      state.tasks = tasks
+    },
+
     showSnackbar(state, text) {
       let timeout = 0
       if (state.snackbar.show) {
         state.snackbar.show = false
-        timeout = 200
+        timeout = 300
       }
       setTimeout(() => {
         state.snackbar.show = true
@@ -84,6 +80,7 @@ export default new Vuex.Store({
     hideSnackbar(state) {
       state.snackbar.show = false
     },
+
     toggleSorting(state) {
       state.sorting = !state.sorting
     }
@@ -95,17 +92,25 @@ export default new Vuex.Store({
     },
     deleteTask({ commit }, id) {
       commit('deleteTask', id)
-      commit('showSnackbar', 'Task deleted')
+      commit('showSnackbar', 'Task deleted!')
     },
     updateTaskTitle({ commit }, payload) {
       commit('updateTaskTitle', payload)
-      commit('showSnackbar', 'Task updated')
+      commit('showSnackbar', 'Task updated!')
     },
     updateTaskDueDate({ commit }, payload) {
       commit('updateTaskDueDate', payload)
-      commit('showSnackbar', 'Task date updated')
-    },
+      commit('showSnackbar', 'Due Date Updated!')
+    }
   },
-  modules: {
+  getters: {
+    tasksFiltered(state) {
+      if (!state.search) {
+        return state.tasks
+      }
+      return state.tasks.filter(task =>
+        task.title.toLowerCase().includes(state.search.toLowerCase())
+      )
+    }
   }
 })

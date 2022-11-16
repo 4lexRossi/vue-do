@@ -5,7 +5,6 @@
       :mobile-breakpoint="768"
       app
     >
-
       <v-img
         class="pa-4 pt-7"
         src="todo-header.jpg"
@@ -13,10 +12,14 @@
         gradient="to top right, rgba(19,84,122,.5), rgba(128,208,199,.8)"
       >
         <v-avatar size="70" class="mb-2">
-            <img src="https://avatars3.githubusercontent.com/u/62000504?s=400&u=9077ec8b32016a8accbb59dfc8e6d217b7b1b468&v=4" alt="user picture" />
+          <img src="https://avatars3.githubusercontent.com/u/62000504?s=400&u=9077ec8b32016a8accbb59dfc8e6d217b7b1b468&v=4" alt="user picture" />
         </v-avatar>
-        <div class="white--text text-subtitle-1 font-weight-bold">Alex Rossi</div>
-        <div class="white--text text-subtitle-2">4lexRossi</div>
+        <div class="white--text text-subtitle-1 font-weight-bold">
+          Alex Rossi
+        </div>
+        <div class="white--text text-subtitle-2">
+          4lexRossi
+        </div>
       </v-img>
 
       <v-list
@@ -69,7 +72,7 @@
           <live-date-time />
         </v-row>
       </v-container>
-    
+
     </v-app-bar>
 
     <v-main>
@@ -80,21 +83,20 @@
 </template>
 
 <script>
-export default {
-  data: () => ({
-    drawer: null,
-    items: [
-      { title: 'Todo', icon: 'mdi-format-list-checks', to: '/' },
-      { title: 'About', icon: 'mdi-help-box', to: '/about' },
-    ],
-    right: null,
-  }),
-  components: {
-    'search': require('@/components/Tools/Search.vue').default,
-    'live-date-time': require('@/components/Tools/LiveDateTime.vue').default,
-    'snackbar': require('@/components/Shared/Snackbar.vue').default
+  export default {
+    data: () => ({
+      drawer: null,
+      items: [
+        { title: 'Todo', icon: 'mdi-format-list-checks', to: '/' },
+        { title: 'About', icon: 'mdi-help-box', to: '/about' },
+      ],
+    }),
+    components: {
+      'search': require('@/components/Tools/Search.vue').default,
+      'live-date-time': require('@/components/Tools/LiveDateTime.vue').default,
+      'snackbar': require('@/components/Shared/Snackbar.vue').default
+    }
   }
-}
 </script>
 
 <style lang="sass">

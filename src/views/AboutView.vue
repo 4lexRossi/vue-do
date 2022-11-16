@@ -1,9 +1,9 @@
 <template>
   <div class="about pa-6">
     <h1>About {{ $store.state.appTitle }}</h1>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus cumque porro ex ullam, asperiores officia eum sapiente. Expedita architecto voluptas, aliquid dolores molestias vel sint nihil odit incidunt, maxime accusantium?</p>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus cumque porro ex ullam, asperiores officia eum sapiente. Expedita architecto voluptas, aliquid dolores molestias vel sint nihil odit incidunt, maxime accusantium?</p>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus cumque porro ex ullam, asperiores officia eum sapiente. Expedita architecto voluptas, aliquid dolores molestias vel sint nihil odit incidunt, maxime accusantium?</p>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus cumque porro ex ullam, asperiores officia eum sapiente. Expedita architecto voluptas, aliquid dolores molestias vel sint nihil odit incidunt, maxime accusantium?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat justo id viverra consequat. Integer feugiat lorem faucibus est ornare scelerisque. Donec tempus, nunc vitae semper sagittis, odio magna semper ipsum, et laoreet sapien mauris vitae arcu.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat justo id viverra consequat. Integer feugiat lorem faucibus est ornare scelerisque. Donec tempus, nunc vitae semper sagittis, odio magna semper ipsum, et laoreet sapien mauris vitae arcu.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat justo id viverra consequat. Integer feugiat lorem faucibus est ornare scelerisque. Donec tempus, nunc vitae semper sagittis, odio magna semper ipsum, et laoreet sapien mauris vitae arcu.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat justo id viverra consequat. Integer feugiat lorem faucibus est ornare scelerisque. Donec tempus, nunc vitae semper sagittis, odio magna semper ipsum, et laoreet sapien mauris vitae arcu.</p>
   </div>
 </template>

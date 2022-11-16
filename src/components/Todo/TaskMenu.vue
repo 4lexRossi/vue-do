@@ -90,6 +90,7 @@ export default {
   }),
   methods: {
     handleClick(index) {
+      this.$store.state.search = null
       this.items[index].click.call(this)
     }
   },
